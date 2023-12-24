@@ -11,9 +11,11 @@ public class PlayerAction : MonoBehaviour
     public float speed;
 
     Rigidbody2D rigid;
+    Animator anim;
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -29,8 +31,22 @@ public class PlayerAction : MonoBehaviour
         if (hDown || vUp) isHorizonMove = true;
         else if (vDown || hUp) isHorizonMove = false;
 
+        //애니메이션
+        if (anim.GetInteger("hAxisRaw") != h)
+        {
+            anim.SetBool("isChange", true);
+            anim.SetInteger("hAxisRaw", (int)h);
+        }
+        else if (anim.GetInteger("vAxisRaw") != v)
+        {
+            anim.SetBool("isChange", true);
+            anim.SetInteger("vAxisRaw", (int)v);
+        }
+        else
+        {
+            anim.SetBool("isChange", false);
+        }
     }
-
     void FixedUpdate()
     {
         Vector2 moveVec = isHorizonMove ? new Vector2(h, 0) : new Vector2(0, v);
