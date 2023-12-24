@@ -1,31 +1,7 @@
 fileFormatVersion: 2
 guid: d79edf18a76e2654a9ac99f15de8b2b3
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 21300000
-    second: Luna Idle
-  - first:
-      213: 21300002
-    second: Luna Talk
-  - first:
-      213: 21300004
-    second: Luna Smile
-  - first:
-      213: 21300006
-    second: Luna Angry
-  - first:
-      213: 21300008
-    second: Ludo Idle
-  - first:
-      213: 21300010
-    second: Ludo Talk
-  - first:
-      213: 21300012
-    second: Ludo Smile
-  - first:
-      213: 21300014
-    second: Ludo Angry
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -58,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 24
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -87,42 +63,16 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 1
+  applyGammaDecoding: 0
   swizzle: 50462976
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 256
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Standalone
-    maxTextureSize: 256
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 256
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -132,10 +82,23 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
-    maxTextureSize: 256
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -145,10 +108,23 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: iPhone
-    maxTextureSize: 256
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -158,10 +134,10 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Server
-    maxTextureSize: 256
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -173,7 +149,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Luna Idle
+      name: NPC Portrait_0
       rect:
         serializedVersion: 2
         x: 0
@@ -181,20 +157,20 @@ TextureImporter:
         width: 34
         height: 46
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e8cbec21ad9a5146a6399e187f79581
-      internalID: 21300000
+      spriteID: edd712cadfdbc48d68b03650c97577c8
+      internalID: -429773255
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Luna Talk
+      name: NPC Portrait_1
       rect:
         serializedVersion: 2
         x: 35
@@ -202,20 +178,20 @@ TextureImporter:
         width: 34
         height: 46
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d10d1fb6ab8887743bcc7bd68c6741db
-      internalID: 21300002
+      spriteID: 7b2555f904bb749ef80e5227e1c68f20
+      internalID: -1732160226
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Luna Smile
+      name: NPC Portrait_2
       rect:
         serializedVersion: 2
         x: 70
@@ -223,20 +199,20 @@ TextureImporter:
         width: 34
         height: 46
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d0300f67d92ace47949343e5fdd231c
-      internalID: 21300004
+      spriteID: 917e6e6c1499240e8b6eb87712d235ff
+      internalID: -1554087491
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Luna Angry
+      name: NPC Portrait_3
       rect:
         serializedVersion: 2
         x: 105
@@ -244,98 +220,98 @@ TextureImporter:
         width: 34
         height: 46
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2b3732da275df34fbc4cb7c50f9cedb
-      internalID: 21300006
+      spriteID: cfaec698a35af46149a3d9a9e6b16130
+      internalID: 2073890188
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ludo Idle
+      name: NPC Portrait_4
       rect:
         serializedVersion: 2
-        x: 0
+        x: 2
         y: 0
-        width: 34
-        height: 46
+        width: 30
+        height: 43
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4843ffde443d13441982a64d625783d1
-      internalID: 21300008
+      spriteID: 85e68c041e2cb49b3a3b3e29011f5cca
+      internalID: -967313474
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ludo Talk
+      name: NPC Portrait_5
       rect:
         serializedVersion: 2
-        x: 35
+        x: 37
         y: 0
-        width: 34
-        height: 46
+        width: 30
+        height: 43
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e21efaca3ed60ec4ea3bae9cada96e5d
-      internalID: 21300010
+      spriteID: 1e2bc689b7ebf4e0390f9e2d11b0a093
+      internalID: 1617882936
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ludo Smile
+      name: NPC Portrait_6
       rect:
         serializedVersion: 2
-        x: 70
+        x: 72
         y: 0
-        width: 34
-        height: 46
+        width: 30
+        height: 43
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5659a6b8893ed4c4d81d88ec467912bf
-      internalID: 21300012
+      spriteID: fd7a474a1c70c45ed8687c29f656be28
+      internalID: 739411668
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ludo Angry
+      name: NPC Portrait_7
       rect:
         serializedVersion: 2
-        x: 105
+        x: 107
         y: 0
-        width: 34
-        height: 46
+        width: 30
+        height: 43
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4dc061a7811deba4d9b619fc30822d12
-      internalID: 21300014
+      spriteID: deb868b0661024ebe81a4d27dc4c18f5
+      internalID: -347308796
       vertices: []
       indices: 
       edges: []
@@ -343,7 +319,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: fee967a87b2e38d46a8002bf33a83ea2
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -351,14 +327,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Ludo Angry: 21300014
-      Ludo Idle: 21300008
-      Ludo Smile: 21300012
-      Ludo Talk: 21300010
-      Luna Angry: 21300006
-      Luna Idle: 21300000
-      Luna Smile: 21300004
-      Luna Talk: 21300002
+      NPC Portrait_0: -429773255
+      NPC Portrait_1: -1732160226
+      NPC Portrait_2: -1554087491
+      NPC Portrait_3: 2073890188
+      NPC Portrait_4: -967313474
+      NPC Portrait_5: 1617882936
+      NPC Portrait_6: 739411668
+      NPC Portrait_7: -347308796
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
