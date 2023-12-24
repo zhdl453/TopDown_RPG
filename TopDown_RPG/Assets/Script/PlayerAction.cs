@@ -28,8 +28,10 @@ public class PlayerAction : MonoBehaviour
         bool hUp = Input.GetButtonUp("Horizontal");
         bool vUp = Input.GetButtonUp("Vertical");
 
-        if (hDown || vUp) isHorizonMove = true;
-        else if (vDown || hUp) isHorizonMove = false;
+        //이부분 진짜 이해안감..ㅜㅜ 노션정리한거 참고
+        if (hDown) isHorizonMove = true;
+        else if (vDown) isHorizonMove = false;
+        else if (hUp || vUp) isHorizonMove = h != 0;
 
         //애니메이션
         if (anim.GetInteger("hAxisRaw") != h)

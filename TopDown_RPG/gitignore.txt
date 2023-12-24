@@ -75,6 +75,3 @@ TopDown_RPG/Library
 TopDown_RPG/Logs
 TopDown_RPG/Temp
 TopDown_RPG/obj
-TopDown_RPG/obj
-TopDown_RPG/obj
-TopDown_RPG/obj/Debug/Assembly-CSharp-Editor.csproj.AssemblyReference.cache
