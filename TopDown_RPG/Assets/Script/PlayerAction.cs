@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class PlayerAction : MonoBehaviour
 {
+    public GameManager manager;
     float h;
     float v;
     bool isHorizonMove; //상하좌우만 움직이게 하고 싶음
     public float speed;
     Vector3 dirVec; //현재 바라보고 있는 방향 값을 가진 변수가 필요함
     GameObject scanObject;
-
     Rigidbody2D rigid;
     Animator anim;
     void Awake()
@@ -21,14 +21,14 @@ public class PlayerAction : MonoBehaviour
     }
 
     void Update()
-    {
-        h = Input.GetAxisRaw("Horizontal");
-        v = Input.GetAxisRaw("Vertical");
+    {//isAction 취하고 있을땐 0되서 못움직이게
+        h = manager.isAction ? 0 : Input.GetAxisRaw("Horizontal");
+        v = manager.isAction ? 0 : Input.GetAxisRaw("Vertical");
 
-        bool hDown = Input.GetButtonDown("Horizontal");
-        bool vDown = Input.GetButtonDown("Vertical");
-        bool hUp = Input.GetButtonUp("Horizontal");
-        bool vUp = Input.GetButtonUp("Vertical");
+        bool hDown = manager.isAction ? false : Input.GetButtonDown("Horizontal");
+        bool vDown = manager.isAction ? false : Input.GetButtonDown("Vertical");
+        bool hUp = manager.isAction ? false : Input.GetButtonUp("Horizontal");
+        bool vUp = manager.isAction ? false : Input.GetButtonUp("Vertical");
 
         //이부분 진짜 이해안감..ㅜㅜ 노션정리한거 참고
         if (hDown) isHorizonMove = true;
@@ -60,7 +60,7 @@ public class PlayerAction : MonoBehaviour
         //Scan
         if (Input.GetButtonDown("Jump") && scanObject != null) //유니티에서 스페이스바가 Jump로 등록되어있음.(input manager에서 확인해보셈)
         {
-            Debug.Log($"This is : " + scanObject.name);
+            manager.Action(scanObject);
         }
     }
     void FixedUpdate()
