@@ -18,10 +18,13 @@ public class TalkManager : MonoBehaviour
     // Update is called once per frame
     void GenerateData()
     {
-        talkData.Add(1, new string[] { "Hi:1000", "Are you new here, huh?:2000" }); //구분자와 함께 초상화 Index를 문장 뒤에 추가
+        talkData.Add(1, new string[] { "Hi:1000", "Are you new here, huh?:2000", "Go look around more if you want:1000" }); //구분자와 함께 초상화 Index를 문장 뒤에 추가
         talkData.Add(2, new string[] { "Yo:2000", "Isn't that lake so beautiful, Man?:1000", "Actually, I'm told that there is some secret behind the lake.:2000" });
         talkData.Add(100, new string[] { "This is just a box" });
         talkData.Add(200, new string[] { "This looks like a desk that someone has used." });
+
+        //Quest Talk
+        talkData.Add(1 + 10, new string[] { "Hello..:1000", "I heard that there was an amazing story in this town:2000", "Lodo will tell you about the story:1000" });
 
         portraitData.Add(1 + 1000, portraitArr[0]);
         portraitData.Add(1 + 2000, portraitArr[1]);

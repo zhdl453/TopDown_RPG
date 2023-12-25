@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public GameObject talkPanel;
+    public QuestManager questManager;
     public Image portraitImg;
     public TMP_Text talkText;
     public GameObject scanObject;
@@ -25,7 +26,9 @@ public class GameManager : MonoBehaviour
     }
     void Talk(int id, bool isNpc) //대화가 모두 끝나야 액션이 끝나도록 설정해야함
     {
-        string talkData = talkManager.GetTalk(id, talkIndex);
+        //Set Talk Data
+        int questTalkIndex = questManager.GetQuestTalkIndex(id);
+        string talkData = talkManager.GetTalk(id + questTalkIndex, talkIndex);
         if (talkData == null)
         {
             isAction = false;
