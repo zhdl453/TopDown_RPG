@@ -15,9 +15,9 @@ public class QuestManager : MonoBehaviour
     }
     void GenerateData()
     {
-        questList.Add(10, new QuestData("마을사람들과 대화하기", new int[] { 1, 2 })); //퀘스트를 새로 만듦
-        questList.Add(20, new QuestData("루도의 동전 찾아주기", new int[] { 500, 2 })); //퀘스트를 새로 만듦
-        questList.Add(30, new QuestData("퀘스트 올 클리어!", new int[] { 0 })); //퀘스트를 새로 만듦
+        questList.Add(10, new QuestData("Let's talk to neighbors", new int[] { 1, 2 })); //퀘스트를 새로 만듦
+        questList.Add(20, new QuestData("Find coin for ludo", new int[] { 500, 2 })); //퀘스트를 새로 만듦
+        questList.Add(30, new QuestData("All completed!", new int[] { 0 })); //퀘스트를 새로 만듦
     }
 
     public int GetQuestTalkIndex(int id)

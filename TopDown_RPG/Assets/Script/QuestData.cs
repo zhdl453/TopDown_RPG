@@ -12,8 +12,4 @@ public class QuestData
         questName = name;
         npcId = npc;
     }
-    void Update()
-    {
-
-    }
 }

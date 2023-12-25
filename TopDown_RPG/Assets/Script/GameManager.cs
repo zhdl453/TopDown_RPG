@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public TMP_Text questName;
     public Animator talkPanel;
     public Animator portraitAnim;
     public QuestManager questManager;
@@ -16,10 +17,11 @@ public class GameManager : MonoBehaviour
     public bool isAction;
     public int talkIndex;
     public Sprite prevportrait;
+    public AudioSource completeSound;
 
     void Start()
     {
-        Debug.Log(questManager.CheckQuest());
+        questName.text = $"Quest: {questManager.CheckQuest()}";
     }
     public void Action(GameObject scanObj)
     {
@@ -52,7 +54,14 @@ public class GameManager : MonoBehaviour
         {
             isAction = false;
             talkIndex = 0; //이야기끝나면 인덱스 초기화 시켜줘야 다른 오브젝트 대화창 뜰때 0부터 시작함
-            Debug.Log(questManager.CheckQuest(id));
+
+            questName.text = $"Quest: {questManager.CheckQuest(id)}";
+            if (questManager.CheckQuest(id) == "All completed!")
+            {
+                completeSound.Play();
+            }
+
+
             return; //함수 강제 종료 역할
         }
         if (isNpc)
