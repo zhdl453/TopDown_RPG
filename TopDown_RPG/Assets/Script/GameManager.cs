@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public GameObject talkPanel;
+    public Image portraitImg;
     public TMP_Text talkText;
     public GameObject scanObject;
     public TalkManager talkManager;
@@ -32,11 +34,15 @@ public class GameManager : MonoBehaviour
         }
         if (isNpc)
         {
-            talkText.text = talkData;
+            talkText.text = talkData.Split(":")[0];
+
+            portraitImg.sprite = talkManager.GetPortrait(id, int.Parse(talkData.Split(":")[1]));
+            portraitImg.color = new Color(1, 1, 1, 1);
         }
         else
         {
             talkText.text = talkData;
+            portraitImg.color = new Color(1, 1, 1, 0); //알파값을 0으로 해서 안보이게 하면 되지
         }
         isAction = true;
         talkIndex++; //계속 이어가게 할수있게끔
