@@ -14,8 +14,6 @@ public class TalkManager : MonoBehaviour
         portraitData = new Dictionary<int, Sprite>(); //초기화 해주기
         GenerateData();
     }
-
-    // Update is called once per frame
     void GenerateData()
     {
         talkData.Add(1, new string[] { "Hi:1000", "Are you new here, huh?:2000", "Go look around more if you want:1000" }); //구분자와 함께 초상화 Index를 문장 뒤에 추가
@@ -25,7 +23,12 @@ public class TalkManager : MonoBehaviour
 
         //Quest Talk
         talkData.Add(1 + 10, new string[] { "Hello..:1000", "I heard that there was an amazing story in this town:2000", "Lodo will tell you about the story:1000" });
-
+        talkData.Add(2 + 11, new string[] { "Hey:1000", "Did you come to listen to a story of the lake?:2000", "then, I could use your help to do some work:1000", "I'd like you to pick up the coins that have dropped around my house:2000" });
+        talkData.Add(1 + 20, new string[] { "Ludo's coin?:1000", "God! he always lose his stuff!:4000", "I gotta have a bone to pick with him:4000" });
+        talkData.Add(2 + 20, new string[] { "Please Get me back my coin..:2000" });
+        talkData.Add(500 + 20, new string[] { "Coin has been found." });
+        talkData.Add(2 + 21, new string[] { "Woah..Thank you for finding the coin..:3000" });
+        //1000:Normal, 2000:Speak, 3000:Happy, 4000:Angry,
         portraitData.Add(1 + 1000, portraitArr[0]);
         portraitData.Add(1 + 2000, portraitArr[1]);
         portraitData.Add(1 + 3000, portraitArr[2]);
@@ -37,7 +40,18 @@ public class TalkManager : MonoBehaviour
     }
 
     public string GetTalk(int id, int talkIndex)
-    {
+    {//ContainsKey():딕션너리에 키가 존재하는지 검사
+        if (!talkData.ContainsKey(id))
+        {//해당퀘스트 진행순서 대사가 없을때, 퀘스트 맨 처음 대사를 가지고 온다.
+            if (!talkData.ContainsKey(id - id % 10))//퀘스트 맨 처음 대사마저 없을때(책상이나 상자처럼), 기본 대사를 가지고 오면 된다(퀘스트번호 제거후재탐색)
+            {//Get First Talk
+                return GetTalk(id - id % 100, talkIndex);
+            }
+            else//Get First Quest Talk
+            {
+                return GetTalk(id - id % 10, talkIndex);
+            }
+        }
         if (talkIndex == talkData[id].Length)
         {
             return null; //대화 끝난거임

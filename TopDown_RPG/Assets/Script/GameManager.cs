@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject talkPanel;
+    public Animator talkPanel;
+    public Animator portraitAnim;
     public QuestManager questManager;
     public Image portraitImg;
     public TMP_Text talkText;
@@ -14,6 +15,12 @@ public class GameManager : MonoBehaviour
     public TalkManager talkManager;
     public bool isAction;
     public int talkIndex;
+    public Sprite prevportrait;
+
+    void Start()
+    {
+        Debug.Log(questManager.CheckQuest());
+    }
     public void Action(GameObject scanObj)
     {
         isAction = true;
@@ -21,7 +28,7 @@ public class GameManager : MonoBehaviour
         ObjData objData = scanObject.GetComponent<ObjData>();
         Talk(objData.id, objData.isNpc);
 
-        talkPanel.SetActive(isAction);
+        talkPanel.SetBool("isShow", isAction);
 
     }
     void Talk(int id, bool isNpc) //대화가 모두 끝나야 액션이 끝나도록 설정해야함
@@ -29,18 +36,28 @@ public class GameManager : MonoBehaviour
         //Set Talk Data
         int questTalkIndex = questManager.GetQuestTalkIndex(id);
         string talkData = talkManager.GetTalk(id + questTalkIndex, talkIndex);
+
+        //End Talk
         if (talkData == null)
         {
             isAction = false;
             talkIndex = 0; //이야기끝나면 인덱스 초기화 시켜줘야 다른 오브젝트 대화창 뜰때 0부터 시작함
+            Debug.Log(questManager.CheckQuest(id));
             return; //함수 강제 종료 역할
         }
         if (isNpc)
         {
             talkText.text = talkData.Split(":")[0];
-
+            //Show Portrait
             portraitImg.sprite = talkManager.GetPortrait(id, int.Parse(talkData.Split(":")[1]));
             portraitImg.color = new Color(1, 1, 1, 1);
+            //Animation Portrait
+            if (prevportrait != portraitImg.sprite)
+            {
+                portraitAnim.SetTrigger("doEffect");
+                prevportrait = portraitImg.sprite;
+            }
+
         }
         else
         {
