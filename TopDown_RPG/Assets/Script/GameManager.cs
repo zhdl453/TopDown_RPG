@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public Animator portraitAnim;
     public QuestManager questManager;
     public Image portraitImg;
-    public TMP_Text talkText;
+    public TypeEffect talk;
     public GameObject scanObject;
     public TalkManager talkManager;
     public bool isAction;
@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
         }
         if (isNpc)
         {
-            talkText.text = talkData.Split(":")[0];
+            talk.SetMsg(talkData.Split(":")[0]);
             //Show Portrait
             portraitImg.sprite = talkManager.GetPortrait(id, int.Parse(talkData.Split(":")[1]));
             portraitImg.color = new Color(1, 1, 1, 1);
@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            talkText.text = talkData;
+            talk.SetMsg(talkData);
             portraitImg.color = new Color(1, 1, 1, 0); //알파값을 0으로 해서 안보이게 하면 되지
         }
         isAction = true;

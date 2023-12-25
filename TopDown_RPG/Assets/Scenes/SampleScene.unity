@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 231554972}
   - component: {fileID: 231554974}
   - component: {fileID: 231554973}
+  - component: {fileID: 231554975}
   m_Layer: 5
   m_Name: Exit Point
   m_TagString: Untagged
@@ -198,6 +199,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 231554971}
   m_CullTransparentMesh: 1
+--- !u!95 &231554975
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231554971}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 181ba2199cf5d469c949c7d8b8027561, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &508834987
 GameObject:
   m_ObjectHideFlags: 0
@@ -2813,6 +2835,7 @@ GameObject:
   - component: {fileID: 635821235}
   - component: {fileID: 635821237}
   - component: {fileID: 635821236}
+  - component: {fileID: 635821238}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2936,6 +2959,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 635821234}
   m_CullTransparentMesh: 1
+--- !u!114 &635821238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635821234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32b1567ff34514363a870679ad1ac7c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetMsg: 
+  EndCursor: {fileID: 231554971}
+  CharPerSeconds: 15
+  msgText: {fileID: 635821236}
+  index: 0
 --- !u!1 &734768410
 GameObject:
   m_ObjectHideFlags: 0
@@ -3951,7 +3991,7 @@ Tilemap:
       - {fileID: 2752588384504392991, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
       - {fileID: -2969016694365801900, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
       - {fileID: 1955328530927145255, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
-      m_AnimationSpeed: 1.7359989
+      m_AnimationSpeed: 1.0720553
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 6, y: -2, z: 0}
@@ -3962,7 +4002,7 @@ Tilemap:
       - {fileID: 2752588384504392991, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
       - {fileID: -2969016694365801900, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
       - {fileID: 1955328530927145255, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
-      m_AnimationSpeed: 2.1420224
+      m_AnimationSpeed: 2.4376025
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 18, y: -1, z: 0}
@@ -3973,7 +4013,7 @@ Tilemap:
       - {fileID: 2752588384504392991, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
       - {fileID: -2969016694365801900, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
       - {fileID: 1955328530927145255, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
-      m_AnimationSpeed: 1.2498937
+      m_AnimationSpeed: 2.3295665
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 11, y: 0, z: 0}
@@ -3984,7 +4024,7 @@ Tilemap:
       - {fileID: 2752588384504392991, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
       - {fileID: -2969016694365801900, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
       - {fileID: 1955328530927145255, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
-      m_AnimationSpeed: 1.9460561
+      m_AnimationSpeed: 2.0505083
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
@@ -6754,11 +6794,12 @@ MonoBehaviour:
   portraitAnim: {fileID: 837990053}
   questManager: {fileID: 508834988}
   portraitImg: {fileID: 837990051}
-  talkText: {fileID: 635821236}
+  talk: {fileID: 635821238}
   scanObject: {fileID: 799755904}
   talkManager: {fileID: 586243815}
   isAction: 0
   talkIndex: 0
+  prevportrait: {fileID: 0}
 --- !u!4 &2134853057
 Transform:
   m_ObjectHideFlags: 0
