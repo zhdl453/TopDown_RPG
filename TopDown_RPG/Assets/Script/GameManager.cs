@@ -33,9 +33,19 @@ public class GameManager : MonoBehaviour
     }
     void Talk(int id, bool isNpc) //대화가 모두 끝나야 액션이 끝나도록 설정해야함
     {
+        int questTalkIndex = 0;
+        string talkData = "";
         //Set Talk Data
-        int questTalkIndex = questManager.GetQuestTalkIndex(id);
-        string talkData = talkManager.GetTalk(id + questTalkIndex, talkIndex);
+        if (talk.isAnim)
+        {
+            talk.SetMsg("");
+            return; //아래쪽 실행시키면 안되니까
+        }
+        else
+        {
+            questTalkIndex = questManager.GetQuestTalkIndex(id);
+            talkData = talkManager.GetTalk(id + questTalkIndex, talkIndex);
+        }
 
         //End Talk
         if (talkData == null)
